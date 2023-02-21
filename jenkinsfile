@@ -37,6 +37,23 @@ pipeline
             
               }
          }
-              
+         stage('Upload Artifacts to Artifactory') {
+          steps {
+            rtUpload (
+                serverId: 'Artifactory',
+                spec: '''{
+                  "files": [
+                    {
+                      "pattern": "target/myweb.war",
+                      "target": "Artifactory/"
+                    }
+                  ]
+            }'''
+            )
+                      
+          }
+          }
+          }
+        }     
     }
 }
