@@ -26,11 +26,11 @@ pipeline
              sshagent(['jenkins_key']) 
              {
            sh """
-           scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.15.244:/opt/tomcat/webapps/
+           scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@52.66.244.212:/opt/tomcat/webapps/
            
-           ssh ec2-user@172.31.15.244 /opt/tomcat/bin/shutdown.sh
+           ssh ec2-user@52.66.244.212 /opt/tomcat/bin/shutdown.sh
 
-           ssh ec2-user@172.31.15.244 /opt/tomcat/bin/startup.sh
+           ssh ec2-user@52.66.244.212 /opt/tomcat/bin/startup.sh
       
               """       
             }
